@@ -15,14 +15,6 @@ using namespace solid_exemple::items;
 #include <solid_exemple_lib/requirement.h>
 using namespace solid_exemple::attributes;
 
-struct Node {
-	std::string key;
-	int value;
-	std::vector<Node> children;
-
-	REFLECT()      // Enable reflection for this type
-};
-
 int main(int ac, char** av) {
 	// World
 	World world("Earth");
@@ -66,4 +58,5 @@ int main(int ac, char** av) {
 	SaveManager::SaveWorld(world);
 
 	delete RequiredStrenght;
+	std::cin.get();
 }
