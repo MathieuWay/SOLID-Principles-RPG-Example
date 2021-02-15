@@ -1,60 +1,66 @@
 # SOLID C++ RPG Implementation
-SOLID regroupe 5 principes de conception permettant de produire des architectures plus compréhensibles, flexibles et de faciliter leurs maintenances.
-## Responsabilité Unique (Single Responsibility Principle)
+SOLID regroupe cinq principes de conception permettant de produire des architectures plus comprÃ©hensibles, flexibles et de faciliter leurs maintenances.
+## ResponsabilitÃ© Unique (Single Responsibility Principle)
 #### Description
-Une classe doit avoir uniquement une seule responsabilité. Si l’on doit modifier cette classe, cela doit être dans l’unique but de modifier le comportement de cette classe.
-En respectant cette règle, cela rend le code source plus facile à comprendre et à maintenir.
+Une classe doit avoir uniquement une seule responsabilitÃ©. Si lâ€™on doit modifier cette classe, cela doit Ãªtre dans lâ€™unique but de modifier le comportement de cette classe.
+En respectant cette rÃ¨gle, cela rend le code source plus facile Ã  comprendre et Ã  maintenir.
 
 #### Exemple: Classes World & SaveManager
-On pourrait ajouter une fonction de sauvegarde à la classe World mais cela violerai le principe de responsabilité unique.
-La classe World doit uniquement être responsable du fonctionnement de la simulation si l'on souhaite ajouter une fonction pour sauvegarder créer un classe qui sera responsable de sauvegarder l'état du monde.
+On pourrait ajouter une fonction de sauvegarde Ã  la classe World, mais cela violerai le principe de responsabilitÃ© unique.
+La classe World doit uniquement Ãªtre responsable du fonctionnement de la simulation si l'on souhaite ajouter une fonction pour sauvegarder crÃ©er un classe qui sera responsable de sauvegarder l'Ã©tat du monde.
 > voir les classes [World](SOLID_Exemple/include/solid_exemple_lib/world.h) & [SaveManager](SOLID_Exemple/include/solid_exemple_lib/save_manager.h)
-## Ouvert / Fermé (Open/Close Principle)
+## Ouvert / FermÃ© (Open/Close Principle)
 #### Description
-Ce principe défini qu’un programme doit être ouvert à l'extension mais fermé à la modification. En d’autre terme si l’application est amenée à étendre ses fonctionnalités, cela doit se faire par une extension du code source et non par sa modification.
+Ce principe dÃ©fini quâ€™un programme doit Ãªtre ouvert Ã  l'extension, mais fermÃ© Ã  la modification. En dâ€™autres termes	 si lâ€™application est amenÃ©e Ã  Ã©tendre ses fonctionnalitÃ©s, cela doit se faire par une extension du code source et non par sa modification.
 
-Une fois qu’une classe est approuvée via des revues de code et des tests unitaires, elle ne doit plus être modifiée.
-Ce principe permet de rendre le code source plus flexible et de diminuer les dépendances.
+Une fois quâ€™une classe est approuvÃ©e via des revues de code et des tests unitaires, elle ne doit plus Ãªtre modifiÃ©e.
+Ce principe permet de rendre le code source plus flexible et de diminuer les dÃ©pendances.
 
 #### Exemple: Classe Requirement
-Cette classe est abstraite, elle à été implémenté pour permettre l'ajout de futur exigence. Les classe étendue de la classe abstraite doivent définir le comportement de leurs méthodes afin de crée de nouvelle exigence.
+Cette classe est abstraite, elle Ã  Ã©tÃ© implÃ©mentÃ©e pour permettre l'ajout de futur exigence. Les classes Ã©tendue de la classe abstraite doivent dÃ©finir le comportement de leurs mÃ©thodes afin de crÃ©er de nouvelles exigences.
 > voir la classe [Requirement](SOLID_Exemple/include/solid_exemple_lib/requirement.h)
 ## Substitution de Liskov (Liskov Substitution Principle)
 #### Description
-Le principe de substitution de Liskov évoque la notion de sous-type. Pour tout sous type d’une classe,
-Ce principe permet d’éviter les problèmes de typage et de compatibilité dans le code source surtout lors d’une extension des fonctionnalités.
+Le principe de substitution de Liskov Ã©voque la notion de sous-type. Pour tout sous type dâ€™une classe,
+Ce principe permet dâ€™Ã©viter les problÃ¨mes de typage et de compatibilitÃ© dans le code source surtout lors dâ€™une extension des fonctionnalitÃ©s.
 #### Exemple: Classe StrenghtRequirement & HealthRequirement
-En plus d'être abstraite la classe a été templatisé de façons à pouvoir utiliser tout cristère d'exigence. Comme exemple deux types d'exigences ont été implémenté :
-   - Un critère basé sur la classe Attribut dont les personnages dispose ou l'on teste le niveau de l'attribut.
-  - Un critère basé sur la vie d'un personnage, on vérifie si le personnage un assez de vie.
+En plus d'Ãªtre abstraite la classe a Ã©tÃ© templatisÃ© de faÃ§ons Ã  pouvoir utiliser tout cristÃ¨re d'exigence. Comme exemple deux types d'exigences ont Ã©tÃ© implÃ©mentÃ©s :
+ - Un critÃ¨re basÃ© sur la classe Attribut dont les personnages dispose ou l'on teste le niveau de l'attribut.
+ - Un critÃ¨re basÃ© sur la vie d'un personnage, on vÃ©rifie si le personnage un assez de vie.
   
-Ces deux exigences bien qu'il sont deux différent comportement sont utilisé de la même manière grace à la templatisation.
+Ces deux exigences bien qu'elles soient deux diffÃ©rents comportements sont utilisÃ©s de la mÃªme maniÃ¨re grÃ¢ce Ã  la templatisation.
 > voir la classe [Requirement](SOLID_Exemple/include/solid_exemple_lib/requirement.h)
-## Ségrégation des interfaces (Interface Segregation Principle)
+## SÃ©grÃ©gation des interfaces (Interface Segregation Principle)
 #### Description
-La ségrégation des interfaces définit le fait qu’une classe ne devrait pas dépendre de méthodes qu’elle n’utilise pas.
-Cela permet de réduire la quantité de code inutile, ralentissant notamment la compilation. D’une manière plus générale, cela améliore la lisibilité et la maintenance du code source.
+La sÃ©grÃ©gation des interfaces dÃ©finit le fait quâ€™une classe ne devrait pas dÃ©pendre de mÃ©thodes quâ€™elle nâ€™utilise pas.
+Cela permet de rÃ©duire la quantitÃ© de code inutile, ralentissant notamment la compilation. Dâ€™une maniÃ¨re plus gÃ©nÃ©rale, cela amÃ©liore la lisibilitÃ© et la maintenance du code source.
 #### Exemple: Classes Smith / Dealer / Artisant
-Ces classes permette de définir des types de PNJ:
-- Le smith peut fabriquer et réparer
+Ces classes permettent de dÃ©finir des types de PNJ:
+- Le smith peut fabriquer et rÃ©parer
 - Le dealer peut vendre
 - L'artisant peut fabriquer et vendre
 
-Dans un premier temps on pourrait créer un classe mère PNJ Interaction qui regrouperai c'est trois actions (fabriquer, réparer, vendre), mais cela donnera du code inutilisé sur les PNJ qui sont spécialisé dans certaines interactions.
+Dans un premier temps on pourrait crÃ©er une classe mÃ¨re PNJ Interaction qui regrouperai c'est trois actions (fabriquer, rÃ©parer, vendre), mais cela donnera du code inutilisÃ© sur les PNJ qui sont spÃ©cialisÃ©s dans certaines interactions.
 
-Pour résoudre ce problème, des interfaces définissant chaque interaction est créée de cette manière il suffit de faire hériter un PNJ de chaques actions nécéssaire. Il sera d'autant plus facile de crée de nouvelle interactions et de nouveau PNJ avec différentes interactions.
+Pour rÃ©soudre ce problÃ¨me, des interfaces dÃ©finissant chaque interaction est crÃ©Ã©e de cette maniÃ¨re il suffit de faire hÃ©riter un PNJ de chaque action nÃ©cÃ©ssaires. Il sera d'autant plus facile de crÃ©er de nouvelles interactions et de nouveau PNJ avec diffÃ©rentes interactions.
 > voir les classes [NPC Types](SOLID_Exemple/include/solid_exemple_lib/characters/npcs/npc_types.h) & [NPC Abitilites](SOLID_Exemple/include/solid_exemple_lib/characters/npcs/npc_abilities.h)
-## Inversion des dépendances (Dependency Inversion Principle)
+## Inversion des dÃ©pendances (Dependency Inversion Principle)
 #### Description
-Ce dernier principe établit que les modules de haut-niveau ne doivent pas dépendre des modules de bas-niveau. Ces modules doivent dépendre d’une abstraction.
+Ce dernier principe Ã©tablit que les modules de haut-niveau ne doivent pas dÃ©pendre des modules de bas-niveau. Ces modules doivent dÃ©pendre dâ€™une abstraction.
 
-Ce principe apporte au code source de la réutilisabilité et facilite la maintenance.
+Ce principe apporte au code source de la rÃ©utilisabilitÃ© et facilite la maintenance.
 
 #### Exemple: Classe Requirement / RequirementValidator / StrenghtRequirement
-Dans cette implémentation, requirement est l'abstraction que le module de bas-niveau, StrenghtRequirement et le module de haut niveau RequirementValidator dépende. Ces deux modules sont indépendant l'un de l'autre.
+Dans cette implÃ©mentation, requirement est l'abstraction que le module de bas-niveau, StrenghtRequirement et le module de haut niveau RequirementValidator dÃ©pende. Ces deux modules sont indÃ©pendants l'un de l'autre.
 > voir la classe [Requirement](SOLID_Exemple/include/solid_exemple_lib/requirement.h)
-# Reflexivité
-La reflexvivité dans un programme informatique est sont aptitude à analyser et changer sa structure à sont exécution. Cela apporte plusieur avantage telle-que:
-- La possibilité d'instancier un objet sans que le type d'objet sois à la compilation (codé en dur), permettant d'être changer lors de l'éxécution
-- Cela offre des possibilités de débogage. Les valeurs des variables peuvent être analysées.
-> voir la classe [SaveManager](SOLID_Exemple/src/save_manager.cpp)
+# ReflexivitÃ©
+La reflexivitÃ© dans un programme informatique est son aptitude Ã  analyser et changer sa structure Ã  sont exÃ©cution. Cela apporte plusieurs avantage telle-que:
+- La possibilitÃ© d'instancier un objet sans que le type d'objet sois Ã  la compilation (codÃ© en dur), permettant d'Ãªtre changÃ© lors de l'Ã©xÃ©cution
+- Cela offre des possibilitÃ©s de dÃ©bogage. Les valeurs des variables peuvent Ãªtre analysÃ©es.
+#### Exemple: Classe SaveManager
+Dans chaque entitÃ© de cette implÃ©mentation (World, Character, Attribute) sont analysÃ©s grÃ¢ce Ã  la macro "REFLECT" et le contenu peut Ãªtre inspectÃ© Ã  tout moment.
+> voir la classe [SaveManager](SOLID_Exemple/src/save_manager.cpp#L30)
+>> Le code est basÃ© sur le dÃ©veloppement de 
+> Auteur: Jeff Pershing
+> Source: https://github.com/preshing/FlexibleReflection
+> voir [Reflect.h](SOLID_Exemple/include/reflect.h) & [Primitives.cpp](SOLID_Exemple/src/primitives.cpp)
