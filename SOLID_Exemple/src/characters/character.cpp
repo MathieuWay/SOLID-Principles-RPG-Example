@@ -67,4 +67,15 @@ namespace solid_exemple::characters {
 			m_inventory.erase(it);
 		}
 	}
+	// Define Node's type descriptor
+	REFLECT_STRUCT_BEGIN(Character)
+	REFLECT_STRUCT_MEMBER(m_id)
+	REFLECT_STRUCT_MEMBER(m_name)
+	REFLECT_STRUCT_MEMBER(m_healthMax)
+	REFLECT_STRUCT_MEMBER(m_health)
+	REFLECT_STRUCT_MEMBER(m_posX)
+	REFLECT_STRUCT_MEMBER(m_poxY)
+	REFLECT_STRUCT_MEMBER(m_attributes)
+	REFLECT_STRUCT_MEMBER(m_money)
+	REFLECT_STRUCT_END()
 }

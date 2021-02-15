@@ -53,3 +53,8 @@ Ce principe apporte au code source de la réutilisabilité et facilite la maintena
 #### Exemple: Classe Requirement / RequirementValidator / StrenghtRequirement
 Dans cette implémentation, requirement est l'abstraction que le module de bas-niveau, StrenghtRequirement et le module de haut niveau RequirementValidator dépende. Ces deux modules sont indépendant l'un de l'autre.
 > voir la classe [Requirement](SOLID_Exemple/include/solid_exemple_lib/requirement.h)
+# Reflexivité
+La reflexvivité dans un programme informatique est sont aptitude à analyser et changer sa structure à sont exécution. Cela apporte plusieur avantage telle-que:
+- La possibilité d'instancier un objet sans que le type d'objet sois à la compilation (codé en dur), permettant d'être changer lors de l'éxécution
+- Cela offre des possibilités de débogage. Les valeurs des variables peuvent être analysées.
+> voir la classe [SaveManager](SOLID_Exemple/src/save_manager.cpp)

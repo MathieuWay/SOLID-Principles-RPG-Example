@@ -15,4 +15,4 @@ set(CMAKE_CXX_EXTENSIONS FALSE)
 add_subdirectory(SOLID_Exemple)
 
 # add examples code
-add_subdirectory(builds)
+add_subdirectory(example)

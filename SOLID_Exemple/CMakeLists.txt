@@ -21,7 +21,8 @@ set(SOLID_EXEMPLE_HEADERS
     include/solid_exemple_lib/attributes/intelligence.h
     include/solid_exemple_lib/attributes/strenght.h
     "include/solid_exemple_lib/requirement.h"
-     "include/solid_exemple_lib/factions/faction.h")
+    "include/solid_exemple_lib/factions/faction.h"
+    "include/solid_exemple_lib/reflect.h"  "include/solid_exemple_lib/attributes/crafting.h")
 
 set(SOLID_EXEMPLE_SOURCES
     src/world.cpp
@@ -31,10 +32,13 @@ set(SOLID_EXEMPLE_SOURCES
     src/characters/character.cpp
     # attributes
     src/attributes/attribute.cpp
+    "src/items/item.cpp"
     "src/requirement.cpp"
-     "src/items/item.cpp" "src/characters/npcs/npc_types.cpp")
+     "src/items/item.cpp"
+     "src/characters/npcs/npc_types.cpp"
+     "src/primitives.cpp")
 
-add_library(solid_exemple_lib STATIC ${SOLID_EXEMPLE_HEADERS} ${SOLID_EXEMPLE_SOURCES} "src/items/item.cpp")
+add_library(solid_exemple_lib STATIC ${SOLID_EXEMPLE_HEADERS} ${SOLID_EXEMPLE_SOURCES})
 
 target_include_directories(solid_exemple_lib INTERFACE include)
 target_include_directories(solid_exemple_lib PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)

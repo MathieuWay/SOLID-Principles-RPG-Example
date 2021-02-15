@@ -4,8 +4,7 @@
 namespace solid_exemple::attributes {
 	struct Intelligence : Attribute {
 	public:
-		Intelligence(int value = 0) {
-			m_name = "Intelligence";
+		Intelligence(int value = 0) : Attribute("Intelligence", value) {
 		}
 	};
 }

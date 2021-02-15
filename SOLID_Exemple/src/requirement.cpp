@@ -20,7 +20,7 @@ namespace solid_exemple::attributes {
 
     int StrenghtRequirement::GetCharacterValue(characters::Character& entity) const
     {
-        return entity.GetAttributeValue(Strenght::m_name);
+        return entity.GetAttributeValue(Strenght().m_name);
     }
 
     bool StrenghtRequirement::Requirement(characters::Character& entity) const

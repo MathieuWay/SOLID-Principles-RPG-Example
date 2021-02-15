@@ -1,9 +1,10 @@
 #pragma once
 #include "attribute.h"
+
 namespace solid_exemple::attributes {
-	struct Agility : Attribute {
+	struct Crafting : Attribute {
 	public:
-		Agility(int value = 0) : Attribute("Agility", value) {
+		Crafting(int value = 0) : Attribute("Crafting", value) {
 		}
 	};
 }

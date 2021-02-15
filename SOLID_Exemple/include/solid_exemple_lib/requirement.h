@@ -17,9 +17,7 @@ namespace solid_exemple::attributes {
     struct IRequirement
     {
         T m_valueRequired;
-        //IRequirement();
         IRequirement(T requirement);
-        //virtual ~IRequirement();
         virtual int GetRequirementValue() const { return 0; };
         virtual int GetCharacterValue(characters::Character& entity) const { return 0; };
         virtual bool Requirement(characters::Character& entity) const { return false; };

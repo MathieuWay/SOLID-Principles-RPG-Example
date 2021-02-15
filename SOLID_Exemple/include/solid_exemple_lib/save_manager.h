@@ -10,6 +10,8 @@ namespace solid_exemple {
 		static void SaveWorld(World world);
 
 		static void SaveCharacter(characters::Character character, std::string path);
+
+		static void SaveDataInFile(std::string filepath, std::string data);
 	};
 }
 
